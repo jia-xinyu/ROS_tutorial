@@ -1,2 +1,93 @@
+<div align="center">
+
 # ROS_tutorial
-Tutorial of ROS Noetic
+</div>
+
+## Introduction
+This repository includes some example codes for ROS beginners to understand how ROS works. 
+
+|        |        | Communication Pattern | Message Type | Typical Usage |
+| ------ | --------- | --------- | -------- | -------- | --------------- |
+| topic | Talker-Listener | publish-subscribe | asynchronous | message(*.msg) | sensor data, control command, ... |
+| service | Client-Server | request-response | synchronous | service(*.srv) | specific actions, switch, photo, ... |
+
+* `roscpp_demo`: topic, service
+* `rospy_demo`: topic, service
+
+## Run
+**1.  Run examples**
+Run the following commands in 3 terminals.
+* Topic
+```
+roscore
+rosrun roscpp_demo listener
+rosrun roscpp_demo talker
+```
+* Service
+```
+roscore
+rosrun roscpp_demo client
+rosrun roscpp_demo server
+```
+
+**2.  Build an example**
+*1)* Create a package:
+```
+cd ~/catkin_ws/src
+catkin_create_pkg ${PACKAGE_NAME} roscpp rospy std_msgs
+```
+*2)* Define a message (or service):
+```
+cd ${PACKAGE_NAME}
+mkdir msg && cd msg
+gedit ${MESSAGE_NAME}.msg
+```
+*3)* Generate header files:
+```
+cd ~/catkin_ws
+catkin_make
+```
+You will find `~/catkin_ws/devel/include/${PACKAGE_NAME}/${MESSAGE_NAME}.msg`
+
+*4)* Configure `CMakeLists.txt` and `Package.xml` for roscpp.
+
+
+## Install and Configure ROS
+*1)* Install ROS Noetic. You can refer to this [installation guide](https://zhuanlan.zhihu.com/p/515361781).
+
+*2)* Create a workspace and initialize:
+```
+mkdir -p ~/Documents/catkin_ws/src
+cd ~/Documents/catkin_ws/src
+catkin_init_workspace
+
+cd ~/Documents/catkin_ws
+catkin_make
+```
+
+*3)* Configure ROS environment:
+* Open your `.bashrc` file:
+```
+sudo gedit ~/.bashrc
+```
+and make sure the following in `.bashrc`. Here the ROS version is `melodic` and the workspace path is `~/Documents/catkin_ws`.
+```
+# Set ROS noetic
+source /opt/ros/noetic/setup.bash
+source ~/Documents/catkin_ws/devel/setup.bash
+```
+* Recommend to add shortcut keys in your `.bash_aliases` file:
+```
+sudo gedit ~/.bash_aliases
+```
+and copy the following to `.bash_aliases`:
+```
+######### ROS workspace #########
+alias cw='cd ~/Documents/catkin_ws'
+alias cs='cd ~/Documents/catkin_ws/src'
+alias cm='cd ~/Documents/catkin_ws && catkin_make'
+```
+* Source `.bashrc` or restart your terminal so the path changes take effect:
+```
+source ~/.bashrc
+```
