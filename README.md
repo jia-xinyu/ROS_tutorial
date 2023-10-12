@@ -4,7 +4,7 @@
 </div>
 
 ## Introduction
-This repository includes some example codes for ROS beginners to understand how ROS works. 
+This repository includes some example codes for ROS beginners to understand how ROS works. You can learn more from this [repository](https://github.com/DroidAITech/ROS-Academy-for-Beginners).
 
 | Type |           |         | Communication Pattern | Message Type | Typical Usage |
 | ------ | --------- | --------- | -------- | -------- | --------------- |
@@ -18,6 +18,7 @@ This repository includes some example codes for ROS beginners to understand how 
 
 ## Run
 **1.  Run examples**
+
 Run the following commands in 3 terminals.
 * topic (roscpp)
 ```
@@ -34,14 +35,19 @@ rosrun my_demo client
 * topic (rospy)
 ```
 roscore
-rosrun my_demo py_listener
-rosrun my_demo py_talker
+rosrun my_demo py_listener.py
+rosrun my_demo py_talker.py
 ```
 * service (rospy)
 ```
 roscore
-rosrun my_demo py_server
-rosrun my_demo py_client
+rosrun my_demo py_server.py
+rosrun my_demo py_client.py
+```
+**Note**: rospy cannot be found probably due to lack of permission, run
+```
+cd ~/Documents/catkin_ws/src/ROS_tutorial/my_demo/
+chmod u+x scripts/ -R
 ```
 
 **2.  Build an example**
@@ -67,7 +73,7 @@ catkin_make
 
 For roscpp, you will find header files in `~/catkin_ws/devel/include/${PACKAGE_NAME}/${MESSAGE_NAME}.msg`.
 
-For rospy, the path is `~/catkin_ws/devel/lib/python3/dist-packages/${PACKAGE_NAME}/msg/__init__.py`
+For rospy, the path is `~/catkin_ws/devel/lib/python3/dist-packages/${PACKAGE_NAME}/msg/__init__.py`.
 
 *4)* Configure `CMakeLists.txt` and `Package.xml` for roscpp.
 

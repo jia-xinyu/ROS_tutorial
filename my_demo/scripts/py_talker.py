@@ -11,8 +11,8 @@ def talker():
 
     rate = rospy.Rate(1)
     while not rospy.is_shutdown():
-        rospy.loginfo( 'Talker: GPS: x = %f, y = %f')
-        pub.publish(gps(state, x, y))
+        rospy.loginfo( 'Talker: GPS: x = %f, y = %f' % (x, y))
+        pub.publish(gps(x, y, state))
         x = 1.03 * x
         y = 1.01 * y
         rate.sleep()
