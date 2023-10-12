@@ -19,7 +19,18 @@ This repository includes some example codes for ROS beginners to understand how 
 ## Run
 **1.  Run examples**
 
-Run the following commands in 3 terminals.
+*1)* Clone this repo from GitHub, in case you haven't done it yet: 
+```
+cd ~/Documents/catkin_ws/src
+git clone https://github.com/Jarvis861/ROS_tutorial.git
+```
+
+*2)* Open ROS workspace and compile
+```
+cd ~/Documents/catkin_ws && catkin_make
+```
+
+*3)* Run the following commands in 3 terminals.
 * topic (roscpp)
 ```
 roscore
@@ -98,7 +109,7 @@ catkin_make
 ```
 sudo gedit ~/.bashrc
 ```
-and make sure the following in `.bashrc`. Here the ROS version is `melodic` and the workspace path is `~/Documents/catkin_ws`.
+and make sure the following in `.bashrc`. Here the ROS version is `noetic` and the workspace path is `~/Documents/catkin_ws`.
 ```
 # Set ROS noetic
 source /opt/ros/noetic/setup.bash
