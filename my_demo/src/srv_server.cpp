@@ -1,7 +1,7 @@
 #include <ros/ros.h>
-#include <roscpp_demo/Greeting.h>
+#include <my_demo/Greeting.h>
 
-bool handleFunction(roscpp_demo::Greeting::Request &req, roscpp_demo::Greeting::Response &res) {
+bool handleFunction(my_demo::Greeting::Request &req, my_demo::Greeting::Response &res) {
     // print request
     ROS_INFO( "Request from %s with age %d", req.name.c_str(), req.age);
 

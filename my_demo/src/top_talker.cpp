@@ -1,14 +1,14 @@
 #include <ros/ros.h>
-#include <roscpp_demo/gps.h>
+#include <my_demo/gps.h>
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "talker");    // node name
     ros::NodeHandle nh;                 // create handler
-    roscpp_demo::gps msg;                // create msg
+    my_demo::gps msg;                   // create msg
     msg.x = 1.0;
-    msg.y = 1.0;
+    msg.y = 2.0;
     msg.state = "working";
-    ros::Publisher pub = nh.advertise<roscpp_demo::gps>("gps_info", 1);  // topic name, buffer
+    ros::Publisher pub = nh.advertise<my_demo::gps>("gps_info", 1);     // topic name, buffer
 
     ros::Rate loop_rate(1.0);           // 1 Hz
     while(ros::ok) {

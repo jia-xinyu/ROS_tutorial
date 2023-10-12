@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(roscpp_demo)
+project(my_demo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -113,7 +113,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES roscpp_demo
+#  LIBRARIES my_demo
  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
 #  DEPENDS system_lib
 )
@@ -131,7 +131,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/roscpp_demo.cpp
+#   src/${PROJECT_NAME}/my_demo.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -142,7 +142,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/roscpp_demo_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/my_demo_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -159,20 +159,20 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-add_executable(talker src/topic_talker.cpp)
-add_dependencies(talker roscpp_demo_generate_messages_cpp)
+add_executable(talker src/top_talker.cpp)
+add_dependencies(talker my_demo_generate_messages_cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
-add_executable(listener src/topic_listener.cpp)
-add_dependencies(listener roscpp_demo_generate_messages_cpp)
+add_executable(listener src/top_listener.cpp)
+add_dependencies(listener my_demo_generate_messages_cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 
-add_executable(server src/service_server.cpp)
-add_dependencies(server roscpp_demo_generate_messages_cpp)
+add_executable(server src/srv_server.cpp)
+add_dependencies(server my_demo_generate_messages_cpp)
 target_link_libraries(server ${catkin_LIBRARIES})
 
-add_executable(client src/service_client.cpp)
-add_dependencies(client roscpp_demo_generate_messages_cpp)
+add_executable(client src/srv_client.cpp)
+add_dependencies(client my_demo_generate_messages_cpp)
 target_link_libraries(client ${catkin_LIBRARIES})
 
 
@@ -223,7 +223,7 @@ target_link_libraries(client ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_roscpp_demo.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_my_demo.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
