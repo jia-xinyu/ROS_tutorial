@@ -16,7 +16,7 @@ This repository includes some example codes for ROS beginners to understand how 
 * `msg`: gps.msg
 * `srv`: Greeting.srv
 
-## Run
+## How to run
 **1.  Run examples**
 
 *1)* Clone this repo from GitHub, in case you haven't done it yet: 
@@ -61,7 +61,7 @@ cd ~/Documents/catkin_ws/src/ROS_tutorial/my_demo/
 chmod u+x scripts/ -R
 ```
 
-**2.  Build an example**
+**2.  (Optional) Write an example**
 
 *1)* Create a package:
 ```
