@@ -4,7 +4,7 @@
 </div>
 
 ## Introduction
-This repository includes some example codes for ROS beginners to understand how ROS works. You can learn more from this [repository](https://github.com/DroidAITech/ROS-Academy-for-Beginners).
+This repository includes some example codes for ROS beginners to understand how ROS works. You can learn more from this [repository](https://github.com/DroidAITech/ROS-Academy-for-Beginners). For ROS installation, please see the guide at the end.
 
 | Type |           |         | Communication Pattern | Message Type | Typical Usage |
 | ------ | --------- | --------- | -------- | -------- | --------------- |
